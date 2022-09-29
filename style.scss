@@ -1,0 +1,208 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  //background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #F7E7CE;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+// button:focus,
+// button:focus-visible {
+//   outline: 4px auto -webkit-focus-ring-color;
+// }
+
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     color: #213547;
+//     background-color: #ffffff;
+//   }
+//   a:hover {
+//     color: #747bff;
+//   }
+//   button {
+//     background-color: #f9f9f9;
+//   }
+// }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.c-header {
+  padding: 30px 0;
+}
+
+
+.c-form {
+  display: flex;
+  max-width: 800px;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  > * {
+    flex: 0 0 auto;
+  }
+}
+
+.c-form__input {
+  border-radius: 8px;
+  border: none;
+  width: 70%;
+  padding: 0 20px;
+
+  &:focus,
+  &:active,
+  &:focus-visible {
+    border: 1px solid #00B5E2;
+    outline: none;
+  }
+  
+}
+
+.c-btn {
+  width: 25%;
+  margin-left: 2%;
+  background-color: #fff;
+  border: 1px solid #00B5E2;
+  &:hover {
+    background-color: #00B5E2;
+    color: #fff;
+  }
+}
+
+.c-list {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 10px 10px;
+  list-style: none;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.c-listItem {
+  padding: 5px 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  border: 1px solid #00B5E2;
+  transition: all 50ms ease-in;
+
+  &:hover {
+    background-color: #00B5E2;
+    color: #fff;
+  }
+}
+
+.c-weather {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #fff;
+  color: black;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.c-weatherLoc {
+  padding: 10px;
+  margin: 0;
+}
+
+.c-weatherTop {
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-weatherFeel {
+  padding: 0;
+  margin: 0;
+  line-height: 50px;
+  font-size: 50px;
+}
+
+.c-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    border-bottom: 1px solid;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
