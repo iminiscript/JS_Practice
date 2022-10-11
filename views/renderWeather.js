@@ -1,8 +1,8 @@
 class renderWeather {
-    _data;
+    
     render(weather) {
         this._data = weather;
-        this._data.map((weather) => {
+        this._data.forEach((weather) => {
         const list = document.querySelector('.jsList');  
         const html = `
             <div class="c-weather">

@@ -8,9 +8,7 @@ export const showCity = async function() {
     await model.searchCity();
     
     const data = model.state;
-    
-    const {lat, lon} = data.location;
-    
+
     City.render(data);
   } 
   catch(err) {
