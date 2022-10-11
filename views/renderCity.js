@@ -2,7 +2,7 @@ class renderCity {
     
    render(data) {
         this._data = data;
-        this._data.location.map((item) => {
+        this._data.location.forEach((item) => {
         const list = document.querySelector('.jsList'); 
         const weather = document.querySelector('.c-weather'); 
         const html = `
