@@ -12,6 +12,7 @@
     "vite": "^3.0.7"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "lodash-es": "^4.17.21",
     "sass": "^1.55.0"
   }

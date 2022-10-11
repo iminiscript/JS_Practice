@@ -1,7 +1,7 @@
 import * as model from './model.js'
-import { API_URL, KEY, DATA_UNIT } from './config.js'
 import City from './views/renderCity.js'
 import Weather from './views/renderWeather.js'
+const { VITE_API_URL, VITE_API_KEY, VITE_API_UNIT } = import.meta.env
 
 export const showCity = async function() { 
   try {
@@ -22,7 +22,7 @@ export const WeatherData = async function(evt) {
   try {     
     const {lat, lon} = evt.target.dataset;
     
-    const weatherRes = await fetch(`${API_URL}/data/2.5/weather?lat=${lat}&lon=${lon}&units=${DATA_UNIT}&appid=${KEY}`);
+    const weatherRes = await fetch(`${VITE_API_URL}/data/2.5/weather?lat=${lat}&lon=${lon}&units=${VITE_API_UNIT}&appid=${VITE_API_KEY}`);
     
     const weatherDataJson = await weatherRes.json();
     
