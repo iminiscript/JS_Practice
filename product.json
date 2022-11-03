@@ -198,6 +198,7 @@
       "banner": "Most Popular",
       "subheading": "Free Welcome Bundle Includes:",
       "description": "<p>Premium canister, 2 shakers, 5 travel packs, <br />year’s supply vitamin D3+K2 drops.</p>",
+      "Id": "tab_6",
       "imageMobile": {
         "url": "https://images.prismic.io/athletic-greens-new/2112dd35-dde9-417b-9de9-09dcc31d3497_cropped_double_pouch.png?auto=compress,format",
         "alt": null,
@@ -230,6 +231,7 @@
       "banner": "Best Value",
       "subheading": "Free Welcome Bundle Includes:",
       "description": "<p>Premium canister, 2 shakers, 5 travel packs, <br />year’s supply vitamin D3+K2 drops.</p>",
+      "Id": "tab_7",
       "imageMobile": {
         "url": "https://images.prismic.io/athletic-greens-new/60ba9a9f-cc5e-4714-b913-526587c251bb_Double+Subscription+-+Pouch%2B10CT_560x475.png?auto=compress,format",
         "alt": "AG1 Athletic Greens Double Subscription and Travel Packs",
@@ -263,6 +265,7 @@
       "banner": null,
       "subheading": "Buy Once",
       "description": "<p>Try a one-time purchase of AG1. If you love it, you can upgrade to a subscription anytime!</p>",
+      "Id": "tab_8",
       "imageMobile": {
         "url": "https://images.prismic.io/athletic-greens-new/9947fddb-14bd-4ab0-b500-2b32dfd25a3d_One+Time+Purchase+-+Travel+Pack_560x475.png?auto=compress,format",
         "alt": null,

@@ -1,9 +1,9 @@
-
-class click {
-
+import counter from "./counter";
+class ClickToNext   {
+    
     startClick(element, step, backs) {
-        element.forEach( btn => {
-            btn.addEventListener("click", function(e) {
+       
+        element.addEventListener("click", function(e) {
                 e.preventDefault();
                 const stepName = this.parentElement.nextElementSibling.dataset.url;
                 //console.log(stepName)
@@ -14,10 +14,9 @@ class click {
                 window.history.pushState("", "", stepName);
                 //console.log(window.history);
                 // countUpdate('.js-count li');
-                countUpdate();
+                counter.count();
             })
-        })
     }
 }
 
-export default new click();
+export default new ClickToNext();

@@ -3,10 +3,11 @@ import * as model from './model.js'
 
 import StepZero from './views/stepZero';
 import StepOne from './views/stepOne';
+import { navigateToFormStep }  from './prevNext';
 import ClickToNext from './click';
 import { tabs } from './tabs';
 import StepTwo from './views/stepTwo';
-import Back from './back';
+//import Back from './back';
 
 
 // click.startClick(btnFirst, steps, back);
@@ -18,14 +19,34 @@ const stepZero = async function() {
     console.log(step_0);
     await StepZero.startingPoint(step_0);
 
-    const btnFirst = document.querySelector('.js-nextZero');
-    const steps = document.querySelector('.js-count');
-    const back = document.querySelector('.js-back');
-    const btnSec = document.querySelector('.js-nextOne');
-    const btnTer = document.querySelector('.js-nextTwo');
-    // this.startClick(btnFirst, steps, back)
-        
-    ClickToNext.startClick(btnFirst, steps, back);
+    // const btnFirst = document.querySelector('.js-next');
+    // const steps = document.querySelector('.js-count');
+    // const back = document.querySelector('.c-back');
+    // const btnSec = document.querySelector('.c-stepOne');
+    // // this.startClick(btnFirst, steps, back)
+    // // btnFirst.addEventListener("click", function() {
+    // //   this.parentElement.classList.add('hide');
+    // //   btnSec.classList.remove('hide');
+    // //   steps.classList.remove('hide');
+    // //   back.classList.remove('hide');
+    // // })
+    document.querySelectorAll(".js-start").forEach((formNavigationBtn) => {
+      /**
+       * Add a click event listener to the button.
+       */
+      formNavigationBtn.addEventListener("click", () => {
+          /**
+           * Get the value of the step.
+           */
+          const stepNumber = parseInt(formNavigationBtn.getAttribute("step_number"));
+          /**
+           * Call the function to navigate to the target form step.
+           */
+          navigateToFormStep(stepNumber);
+      });
+    });
+  
+
     await StepOne.startStepOne(step_0.data.step0Items, '#step_1');
 
     const tabElement = document.querySelectorAll('[data-value]');
@@ -46,52 +67,25 @@ const stepZero = async function() {
             }
 
             //console.log(stepTwoData)
+            // const et = document.querySelector('.c-stepOne');
             document.querySelector('#step_2').innerHTML = '';
             StepTwo.startStepTwo(stepTwoData, '#step_2');
-
-            const tabElements = document.querySelectorAll('[data-values]');
-            const tabInfoss = document.querySelectorAll('[data-infos]');
-
-            tabElements.forEach( tab => {
-              tab.addEventListener("click", function(e) {
-                  e.stopPropagation();
-                  tabs(tabInfoss, tab);
-              });
-            });
+            //ClickToNext.startClick(btnSec, steps, back);
             
 
             //console.log(step_0.data.step1View1Items);
-
-            const et = document.querySelectorAll('.c-stepOne');
 
             console.log(et);
             
         })
     });
 
-    ClickToNext.startClick(btnSec, steps, back);
-
-    // const tabElements = document.querySelectorAll('[data-values]');
-    // const tabInfoss = document.querySelectorAll('[data-infos]');
-
-    // setTimeout(() => {
-    //   tabElements.forEach( tab => {
-    //     tab.addEventListener("click", function(e) {
-    //         e.stopPropagation();
-    //         console.log(tab)
-    //     });
-    //   });
-    // }, 300);
-    
-
-    ClickToNext.startClick(btnTer, steps, back);
-
 
   
 
   
 
-    await Back.backClick(back, steps);
+    //await Back.backClick(back, steps);
     
   } catch (error) {
     console.log(error)
