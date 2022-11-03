@@ -1,0 +1,198 @@
+.c-stepOne__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c-modal {
+    max-width: 600px;
+    margin:  0 auto;
+    background-color: #DAE7D4;
+    padding: 20px;
+    min-height: 700px;
+    //background-image: url('./public/bg_step_1.png');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.c-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.c-backArrow {
+    width: 32px;
+    height: 14px;
+
+}
+
+.c-logo {
+    width: 80px;
+}
+
+.c-title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    // font-family: 'Open Sans', sans-serif;
+}
+
+.c-steps {
+    max-width: 30%;
+    margin: 30px auto;
+}
+.c-stepsList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-stepsItem {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #2F7D39;
+    text-align: center;
+    position: relative;
+
+    &.is-active {
+        background-color: #2F7D39;
+        color: #ffffff;
+    }
+    
+    &:nth-of-type(1), 
+    &:nth-of-type(2) {
+        &::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            background-color: #2F7D39;
+            top: 11px;
+            right: -40px;
+        }
+    }
+}
+
+.c-plan, .c-stepBlock {
+    display: flex;
+    justify-content: center;
+}
+.c-planTile {
+    background-color: #ffffff;
+
+    &.is_active {
+        background-color: #2F7D39;
+        color: #ffffff;
+    }
+}
+.c-planTile__title {
+ border:  1px solid #c0c0c0;
+ border-bottom: 0;
+ text-align: center;
+}
+
+.c-planTile__label {
+    text-align: center;
+}
+
+.c-planDivder {
+    margin: 20px;
+    border-top: 1px solid #000000;
+}
+.c-planPrice {
+    font-size: 14px;
+    font-weight: 300;
+    b {
+        font-weight: 700;
+    }
+}
+
+.c-planDesc {
+    font-size: 12px;
+}
+
+.c-planDetails {
+    text-align: center;
+    padding: 20px;
+}
+
+.c-btn {
+    background-color: #2F7D39;
+    border-radius: 50px;
+    max-width: 330px;
+    display: block;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 700;
+    margin:  0 auto;
+}
+
+.c-titleMain {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.c-stepZero__title {
+    color: #ffffff;
+    font-size: 54px;
+    text-align: center;
+    padding: 0 70px 20px;
+
+}
+
+.c-stepZero {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: center;
+
+    .c-btn {
+        width: 100%;
+    }
+}
+.c-product, 
+.c-planDetails {
+    display: none;
+}
+.c-stepInside.active {
+    .c-product, 
+    .c-planDetails {
+        display: block;
+    }
+
+    .c-stepProduct {
+        background-color: #2F7D39;
+        
+    }
+}
+
+
+// obj
+//   product[0]
+//     id  = 1
+//     title = Pouch
+//     serving: 30
+//     item[0]
+//       price = 92
+//       title = single
+//     item[1]
+//       price = 190
+//       title = Double
+//     item[2] 
+//       price = 99
+//       title = Buy Once
+     
+//   product[1]
+//     id  = 2
+//     title = Travel Pack
+//     serving: 40
+
+.hide {
+    display: none;
+}
