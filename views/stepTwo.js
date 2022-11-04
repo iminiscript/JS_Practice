@@ -28,6 +28,16 @@ class StepTwo {
               </div>
             </div>
           </div>
+          <div class="c-planList hide">
+            <ul>
+              <li>${item.productName} -  ${item.price} </li>
+              <li>${item.productName} - ${item.giftsValueUs} </li>
+              <li>Total =  ${item.price}+ ${item.giftsValueUs} </li>
+              <li> </li>
+              <li> </li>
+            </ul>
+          </div>
+
           <div class="c-planDetails">
             <p><b>${item.subheading}</b></p>
             <p>${item.description}</p>

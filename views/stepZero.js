@@ -38,27 +38,20 @@ class StepZero extends View {
     </div>
     <div class="c-stepZero c-stepOne--start" data-url="?step-0">
         <h1 class="c-stepZero__title">${this.data.data.bodyText}</h1>
-    <a class="c-btn js-start js-nextZero" data-step="start">${this.data.data.buttonLabelStep0}</a>
+        <div class="c-btn js-start js-nextZero"> ${this.data.data.buttonLabelStep0}</div>
     </div>
     <div class="c-stepOne hide" data-url="?step-1">
         <div class="c-stepBlock" id="step_1">
         </div>
-        <div class="c-checkout js-start js-nextOne">
-            <a  class="c-btn">Next</a>
+        <div class="c-checkout js-start js-nextOne c-btn">
+            Next
         </div>
     </div>
     <div class="c-stepTwo hide" data-url="?step-2">
         <div class="c-stepBlock" id="step_2">
         </div>
-        <div class="c-checkout js-start js-nextTwo">
-            <a  class="c-btn">Next</a>
-        </div>
-    </div>
-    <div class="c-stepThree hide" data-url="?step-3">
-        <div class="c-stepBlock" id="step_3">
-        </div>
-        <div class="c-checkout js-start js-nextT">
-            <a  class="c-btn">Next</a>
+        <div class="c-checkout js-start js-nextTwo c-btn">
+            Next
         </div>
     </div>
     `

@@ -23,6 +23,7 @@ const stepZero = async function() {
     const back = document.querySelector('.js-back');
     const btnSec = document.querySelector('.js-nextOne');
     const btnTer = document.querySelector('.js-nextTwo');
+    const finalElement = document.querySelector('#step_2');
     // this.startClick(btnFirst, steps, back)
         
     ClickToNext.startClick(btnFirst, steps, back);
@@ -71,27 +72,9 @@ const stepZero = async function() {
 
     ClickToNext.startClick(btnSec, steps, back);
 
-    // const tabElements = document.querySelectorAll('[data-values]');
-    // const tabInfoss = document.querySelectorAll('[data-infos]');
+    ClickToNext.finalStepClick(btnTer)
 
-    // setTimeout(() => {
-    //   tabElements.forEach( tab => {
-    //     tab.addEventListener("click", function(e) {
-    //         e.stopPropagation();
-    //         console.log(tab)
-    //     });
-    //   });
-    // }, 300);
-    
-
-    ClickToNext.startClick(btnTer, steps, back);
-
-
-  
-
-  
-
-    await Back.backClick(back, steps);
+    Back.backClick(back, steps, finalElement, btnTer);
     
   } catch (error) {
     console.log(error)
