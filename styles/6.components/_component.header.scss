@@ -5,26 +5,50 @@
 }
 
 .c-modal {
-    max-width: 600px;
+    max-width: 390px;
     margin:  0 auto;
-    background-color: #DAE7D4;
     padding: 20px;
     min-height: 700px;
-    //background-image: url('./public/bg_step_1.png');
+    background: url('./public/bg_step_1.png');
     background-size: cover;
     background-position: center;
+    font-family: 'Roboto', sans-serif;
+
+    &.background {
+        background: #DAE7D4;
+
+        .c-titleMain {
+            color: #000000;
+        }
+    } 
+
+    &.final-step {
+        .c-product {
+            margin-bottom: 20px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    a {
+        color: #2F7D39;
+    }
     
 }
 
 .c-header {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    position: relative;
 }
 
-.c-backArrow {
-    width: 32px;
-    height: 14px;
+.c-back{
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
 
 }
 
@@ -40,7 +64,7 @@
 }
 
 .c-steps {
-    max-width: 30%;
+    max-width: 135px;
     margin: 30px auto;
 }
 .c-stepsList {
@@ -50,12 +74,14 @@
 }
 
 .c-stepsItem {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     border-radius: 50%;
     border: 1px solid #2F7D39;
     text-align: center;
     position: relative;
+    font-size: 17px;
+    line-height: 22px;
 
     &.is-active,
     &.completed {
@@ -68,11 +94,11 @@
         &::after {
             content: "";
             position: absolute;
-            width: 30px;
+            width: 20px;
             height: 1px;
             background-color: #2F7D39;
             top: 11px;
-            right: -40px;
+            right: -27px;
         }
     }
 }
@@ -81,14 +107,14 @@
     display: flex;
     justify-content: center;
 }
-.c-planTile {
-    background-color: #ffffff;
+// .c-planTile {
+//     background-color: #ffffff;
 
-    &.is_active {
-        background-color: #2F7D39;
-        color: #ffffff;
-    }
-}
+//     &.is_active {
+//         background-color: #2F7D39;
+//         color: #ffffff;
+//     }
+// }
 .c-planTile__title {
  border:  1px solid #c0c0c0;
  border-bottom: 0;
@@ -125,7 +151,7 @@
     border-radius: 50px;
     max-width: 330px;
     display: block;
-    padding: 20px;
+    padding: 13.5px 20px;
     text-align: center;
     color: #ffffff;
     font-size: 18px;
@@ -144,6 +170,8 @@
     font-size: 54px;
     text-align: center;
     padding: 0 70px 20px;
+    font-family: 'Lora', serif;
+    font-weight: 300;
 
 }
 
@@ -157,23 +185,203 @@
         width: 100%;
     }
 }
+
+.c-product {
+    width: 232px;
+    margin: 0 auto 100px;
+    min-height: 150px;
+}
 .c-product, 
 .c-planDetails {
     display: none;
 }
+.c-stepInside {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-tile{
+    background-color: #ffffff;
+}
+
+.c-tileIcon {
+    visibility: hidden;
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    padding: 2px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    svg {
+        position: relative;
+        top: 1px;
+        fill: #2F7D39;
+    }
+}
 .c-stepInside.active {
-    .c-product, 
-    .c-planDetails {
+    .c-product {
         display: block;
     }
+    .c-planDetails {
+        display: block;
+        &.hide {
+            display: none;
+        }
+    }
 
-    .c-stepProduct {
-        background-color: #2F7D39;
+    .c-tile {
+        background-color: #2F7D39;  
+        color: #ffffff;  
+    }
+
+    .c-tileIcon {
+        visibility: visible;
+        opacity: 1;
         
+    }
+
+    .c-tileHead {
+        color: #ffffff;
+    }
+}
+.c-stepOne,.c-stepTwo {
+    position: relative;
+}
+
+.c-stepTwo  {
+    img {
+        max-width: 200px;
+    }
+
+    .c-tileType {
+        padding-top: 0;
+        line-height: 22px;
     }
 }
 
+.c-tile {
+    position: absolute;
+    top: 160px;
+    width: 130px;
+    min-height: 100px;
+    z-index: 1;
+    box-sizing: border-box;
+    cursor: pointer;
 
+    &[data-value="#tab_1"] {
+        left: 65px;
+    }
+    &[data-value="#tab_2"]{
+        right: 65px;
+    } 
+    &[data-values="#tab_3"],
+    &[data-values="#tab_6"]  {
+        left: 0;
+    }
+
+    &[data-values="#tab_4"],
+    &[data-values="#tab_7"]  {
+        left: 130px;
+    }
+
+    &[data-values="#tab_5"],
+    &[data-values="#tab_8"]  {
+        right: 0;
+    }
+
+}
+
+.c-tileHead {
+    font-size: 12px;
+    border-bottom: 1px solid;
+    text-align: center;
+    padding: 4px;
+
+    &.null {
+        span{
+            opacity: 0;
+        }
+        background-color: #DAE7D4;
+        border-color: transparent;
+    }
+
+    &.Best {
+        color: #D96535;
+    }
+}
+
+.c-tileLabel {
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+.c-tileType {
+    font-size: 14px;
+    padding-top: 10px;
+}
+.c-tileDivder {
+    margin: 7px;
+}
+.c-tileDesc {
+    font-size: 12px;
+}
+.c-tileList {
+    width: 380px;
+    margin: auto;
+}
+.c-tileList__head {
+    font-size: 14px;
+    text-align: center;
+}
+
+.c-tileList__headPara {
+    padding-top: 10px;
+}
+.c-tileListItem {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    margin: 40px auto 20px;
+    border: 1px solid #D9D9D9;
+    font-size: 14px;
+
+    li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        &:last-of-type {
+            border-top: 2px dotted #D9D9D9;
+        }
+    }
+}
+.c-tileDes {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+
+    span {
+        position: relative;
+        top: 3px;
+        left: -3px;
+    }
+}
+.c-planDetails {
+    margin-top: 33px;
+}
+.c-planDetails__subHead {
+    font-size: 14px;
+    font-weight: 600;
+}
+.c-planDetails__para {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding-top: 8px;
+}
 // obj
 //   product[0]
 //     id  = 1

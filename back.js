@@ -2,7 +2,7 @@ import counter from "./counter";
 
 class Back {
     
-    backClick(element, step, finalStep, btn) {
+    backClick(element, step, finalStep, btn, parent) {
         element.addEventListener("click", function() {
             //console.log(element, step)
             const currentStep = window.location.search;
@@ -34,13 +34,13 @@ class Back {
             if (updateState === '?step-0') {
                 element.classList.add('hide');
                 step.classList.add('hide');
+                parent.classList.remove('background');
             } 
 
             console.log(updateState)
 
             if (updateState === '?step-2') {
-                console.log('Final Step');
-                console.log(finalStep);
+                parent.classList.remove('final-step');
 
                 for (const iterator of finalStep.children) {
                     if(iterator.classList.contains('hide') ) {
@@ -48,7 +48,8 @@ class Back {
                     } else {
                         console.log(iterator.children)
                         iterator.children[1].classList.remove('hide');
-                        iterator.children[2].classList.add('hide');
+                        iterator.children[2].classList.remove('hide');
+                        iterator.children[3].classList.add('hide');
                     }
                 }
 

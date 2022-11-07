@@ -11,6 +11,8 @@ import Back from './back';
 
 // click.startClick(btnFirst, steps, back);
 
+
+
 const stepZero = async function() {
   try {
     await model.getData();
@@ -23,11 +25,14 @@ const stepZero = async function() {
     const back = document.querySelector('.js-back');
     const btnSec = document.querySelector('.js-nextOne');
     const btnTer = document.querySelector('.js-nextTwo');
+    const firstElement = document.querySelector('#step_1');
     const finalElement = document.querySelector('#step_2');
+    const ParentModal = document.querySelector('.c-modal');
     // this.startClick(btnFirst, steps, back)
-        
-    ClickToNext.startClick(btnFirst, steps, back);
+        // console.log(ParentModal)
+    ClickToNext.startClick(btnFirst, steps, back, ParentModal);
     await StepOne.startStepOne(step_0.data.step0Items, '#step_1');
+    await firstElement.children[0].classList.add('active');
 
     const tabElement = document.querySelectorAll('[data-value]');
     const tabInfos = document.querySelectorAll('[data-info]')
@@ -49,7 +54,7 @@ const stepZero = async function() {
             //console.log(stepTwoData)
             document.querySelector('#step_2').innerHTML = '';
             StepTwo.startStepTwo(stepTwoData, '#step_2');
-
+            finalElement.children[0].classList.add('active');
             const tabElements = document.querySelectorAll('[data-values]');
             const tabInfoss = document.querySelectorAll('[data-infos]');
 
@@ -72,9 +77,9 @@ const stepZero = async function() {
 
     ClickToNext.startClick(btnSec, steps, back);
 
-    ClickToNext.finalStepClick(btnTer)
+    ClickToNext.finalStepClick(btnTer, ParentModal)
 
-    Back.backClick(back, steps, finalElement, btnTer);
+    Back.backClick(back, steps, finalElement, btnTer, ParentModal);
     
   } catch (error) {
     console.log(error)
