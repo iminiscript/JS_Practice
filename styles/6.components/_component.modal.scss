@@ -1,0 +1,33 @@
+.c-modal {
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 700px;
+    background: url('../bg_step_1.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+
+    &.background {
+        background: $light-green;
+
+        .c-titleMain {
+            color: $black;
+        }
+    }
+
+    &.final-step {
+        .c-product {
+            margin-bottom: 20px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    a {
+        color: $dark-green;
+    }
+
+}

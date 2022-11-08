@@ -1,0 +1,242 @@
+.c-plan,
+.c-stepBlock {
+    display: flex;
+    justify-content: center;
+}
+
+
+.c-planTile__title {
+    border: 1px solid $grey;
+    border-bottom: 0;
+    text-align: center;
+}
+
+.c-planTile__label {
+    text-align: center;
+}
+
+.c-planDivder {
+    margin: 20px;
+    border-top: 1px solid $black;
+}
+
+.c-planPrice {
+    font-size: 14px;
+    font-weight: 300;
+
+    b {
+        font-weight: 700;
+    }
+}
+
+.c-planDesc {
+    font-size: 12px;
+}
+
+.c-planDetails {
+    text-align: center;
+    padding: 20px;
+}
+
+.c-titleMain {
+    font-size: 24px;
+    color: $white;
+}
+
+.c-product {
+    width: 232px;
+    margin: 0 auto 100px;
+    min-height: 150px;
+}
+
+.c-product,
+.c-planDetails {
+    display: none;
+}
+
+.c-tile {
+    background-color: $white;
+}
+
+.c-tileIcon {
+    visibility: hidden;
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    background-color: $white;
+    padding: 2px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+
+    svg {
+        position: relative;
+        top: 1px;
+        fill: $dark-green;
+    }
+}
+
+.c-stepInside.active {
+    .c-product {
+        display: block;
+    }
+
+    .c-planDetails {
+        display: block;
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    .c-tile {
+        background-color: $dark-green;
+        color: $white;
+    }
+
+    .c-tileIcon {
+        visibility: visible;
+        opacity: 1;
+
+    }
+
+    .c-tileHead {
+        color: $white;
+    }
+}
+
+
+.c-tile {
+    position: absolute;
+    top: 160px;
+    width: 130px;
+    min-height: 100px;
+    z-index: 1;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &[data-value="#tab_1"] {
+        left: 65px;
+    }
+
+    &[data-value="#tab_2"] {
+        right: 65px;
+    }
+
+    &[data-value-child="#tab_3"],
+    &[data-value-child="#tab_6"] {
+        left: 0;
+    }
+
+    &[data-value-child="#tab_4"],
+    &[data-value-child="#tab_7"] {
+        left: 130px;
+    }
+
+    &[data-value-child="#tab_5"],
+    &[data-value-child="#tab_8"] {
+        right: 0;
+    }
+
+}
+
+.c-tileHead {
+    font-size: 12px;
+    border-bottom: 1px solid;
+    text-align: center;
+    padding: 4px;
+
+    &.null {
+        span {
+            opacity: 0;
+        }
+
+        background-color: $light-green;
+        border-color: transparent;
+    }
+
+    &.Best {
+        color: $red;
+    }
+}
+
+.c-tileLabel {
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.c-tileType {
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.c-tileDivder {
+    margin: 7px;
+}
+
+.c-tileDesc {
+    font-size: 12px;
+}
+
+.c-tileList {
+    width: 380px;
+    margin: auto;
+}
+
+.c-tileList__head {
+    font-size: 14px;
+    text-align: center;
+}
+
+.c-tileList__headPara {
+    padding-top: 10px;
+}
+
+.c-tileListItem {
+    padding: 10px 20px;
+    background-color: $white;
+    margin: 40px auto 20px;
+    border: 1px solid $grey;
+    font-size: 14px;
+
+    li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        &:last-of-type {
+            border-top: 2px dotted $grey;
+        }
+    }
+}
+
+.c-tileDes {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+
+    span {
+        position: relative;
+        top: 3px;
+        left: -3px;
+    }
+}
+
+.c-planDetails {
+    margin-top: 33px;
+}
+
+.c-planDetails__subHead {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.c-planDetails__para {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding-top: 8px;
+}
