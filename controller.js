@@ -3,93 +3,81 @@ import * as model from './model.js'
 
 import StepZero from './views/stepZero';
 import StepOne from './views/stepOne';
-import ClickToNext from './click';
-import { tabs } from './tabs';
+import ClickToNext from './clickToNext';
+import  Tabs  from './tabs';
 import StepTwo from './views/stepTwo';
-import Back from './back';
+import Back from './backStep';
+import DataTypes from './checkDataTypes';
 
 
-// click.startClick(btnFirst, steps, back);
-
-
-
-const stepZero = async function() {
-  try {
-    await model.getData();
-    const step_0 = model.state;
-    console.log(step_0);
-    await StepZero.startingPoint(step_0);
-
-    const btnFirst = document.querySelector('.js-nextZero');
-    const steps = document.querySelector('.js-count');
-    const back = document.querySelector('.js-back');
-    const btnSec = document.querySelector('.js-nextOne');
-    const btnTer = document.querySelector('.js-nextTwo');
-    const firstElement = document.querySelector('#step_1');
-    const finalElement = document.querySelector('#step_2');
-    const ParentModal = document.querySelector('.c-modal');
-    // this.startClick(btnFirst, steps, back)
-        // console.log(ParentModal)
-    ClickToNext.startClick(btnFirst, steps, back, ParentModal);
-    await StepOne.startStepOne(step_0.data.step0Items, '#step_1');
-    await firstElement.children[0].classList.add('active');
-
-    const tabElement = document.querySelectorAll('[data-value]');
-    const tabInfos = document.querySelectorAll('[data-info]')
+const app = async function() {
+	try {
     
-    tabElement.forEach( tab => {
-        tab.addEventListener("click", function(e) {
-            e.stopPropagation();
-            console.log('tab', tab);
-            tabs(tabInfos, tab);
-            const type = sessionStorage.getItem("type");
-            let stepTwoData;
-
-            if (type === 'pouch') {
-              stepTwoData = step_0.data.step1View0Items;
-            } else if( type === 'travelPacks') {
-              stepTwoData = step_0.data.step1View1Items;
-            }
-
-            //console.log(stepTwoData)
-            document.querySelector('#step_2').innerHTML = '';
-            StepTwo.startStepTwo(stepTwoData, '#step_2');
-            finalElement.children[0].classList.add('active');
-            const tabElements = document.querySelectorAll('[data-values]');
-            const tabInfoss = document.querySelectorAll('[data-infos]');
-
-            tabElements.forEach( tab => {
-              tab.addEventListener("click", function(e) {
-                  e.stopPropagation();
-                  tabs(tabInfoss, tab);
-              });
-            });
-            
-
-            //console.log(step_0.data.step1View1Items);
-
-            const et = document.querySelectorAll('.c-stepOne');
-
-            console.log(et);
-            
-        })
-    });
-
-    ClickToNext.startClick(btnSec, steps, back);
-
-    ClickToNext.finalStepClick(btnTer, ParentModal)
-
-    Back.backClick(back, steps, finalElement, btnTer, ParentModal);
+    	await model.getData();
     
-  } catch (error) {
-    console.log(error)
-  }
+    	const step_0 = model.state;
+    
+    	console.log(step_0);
+    
+    	await StepZero.startTheApp(step_0);
+
+		const startBtn = document.querySelector('.js-startApp');
+		const countStep = document.querySelector('.js-count');
+		const countStepNumber = document.querySelectorAll('.js-count li');
+		const backStep = document.querySelector('.js-back');
+		const stageMiddle = document.querySelector('.js-nextOne');
+		const stageFinal = document.querySelector('.js-nextTwo');
+		const firstElement = document.querySelector('#step_1');
+		const finalElement = document.querySelector('#step_2');
+		const parentBody = document.querySelector('.c-modal');
+    
+		await ClickToNext.nextStepClick(startBtn, countStep, countStepNumber, backStep, parentBody);
+		
+		await StepOne.startStepOne(step_0.data.step0Items, '#step_1');
+		
+		await firstElement.children[0].classList.add('active');
+
+		const tabElement = document.querySelectorAll('[data-value]');
+		const tabInfos = document.querySelectorAll('[data-info]');
+    
+		tabElement.forEach( tab => {
+			tab.addEventListener("click", function(e) {
+			
+				Tabs.toggleTabs(tabInfos, tab);
+
+				let selectedDataType = DataTypes.checkData(step_0);
+	
+				document.querySelector('#step_2').innerHTML = '';
+				
+				StepTwo.startStepTwo(selectedDataType, '#step_2');
+				
+				finalElement.children[0].classList.add('active');
+				
+				const tabElementChild = document.querySelectorAll('[data-value-child]');
+				const tabInfosChild = document.querySelectorAll('[data-infos-child]');
+
+				tabElementChild.forEach( tab => {
+				tab.addEventListener("click", function(e) {
+					Tabs.toggleTabs(tabInfosChild, tab);
+				});
+				});
+				
+			})
+		});
+
+		ClickToNext.nextStepClick(stageMiddle, countStep, countStepNumber, backStep);
+
+		ClickToNext.finalStepClick(stageFinal, parentBody, countStepNumber);
+
+		Back.backClick(backStep, countStep, countStepNumber, finalElement, stageFinal, parentBody);
+    
+  	} catch (error) {
+    	console.log(error)
+  	}
 }
 
-
 function init() {
-  sessionStorage.removeItem("type");
-  stepZero();
+  app();
 }
 
 init();

@@ -276,18 +276,18 @@
     &[data-value="#tab_2"]{
         right: 65px;
     } 
-    &[data-values="#tab_3"],
-    &[data-values="#tab_6"]  {
+    &[data-value-child="#tab_3"],
+    &[data-value-child="#tab_6"]  {
         left: 0;
     }
 
-    &[data-values="#tab_4"],
-    &[data-values="#tab_7"]  {
+    &[data-value-child="#tab_4"],
+    &[data-value-child="#tab_7"]  {
         left: 130px;
     }
 
-    &[data-values="#tab_5"],
-    &[data-values="#tab_8"]  {
+    &[data-value-child="#tab_5"],
+    &[data-value-child="#tab_8"]  {
         right: 0;
     }
 

@@ -1,18 +1,10 @@
-import View from '../view';
-
 class StepOne {
 
-    // const tab = document.querySelectorAll('[data-value]');
-    // const tabInfos = document.querySelectorAll('[data-info]')
-    // parentElement = document.querySelector('#step_1');
-
     startStepOne(data, element) {
-		this.data = data;
-		//console.log(this.data);
-        //console.log(this.parentElement);
-		
-        this.data.forEach((item) => {
-           const html = `
+        
+		data.forEach((item) => {
+           
+			const html = `
 			<div class="c-stepInside" data-info id="${item.Id}">
 				<div class="c-product">
 					<img src="${item.imageMobile.url}" />
@@ -35,7 +27,6 @@ class StepOne {
 			document.querySelector(element).insertAdjacentHTML("beforeend", html);
 		});
 	}
-    
 }
 
 export default new StepOne();
