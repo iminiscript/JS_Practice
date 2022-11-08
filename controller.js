@@ -1,6 +1,7 @@
 import './styles/index.scss'
 import * as model from './model.js'
 
+import { redirectToStep } from './redirect';
 import StepZero from './views/stepZero';
 import StepOne from './views/stepOne';
 import ClickToNext from './clickToNext';
@@ -77,7 +78,8 @@ const app = async function() {
 }
 
 function init() {
-  app();
+	redirectToStep();
+  	app();
 }
 
 init();
