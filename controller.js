@@ -75,7 +75,11 @@ const app = async function () {
             backStep
         );
 
-        ClickToNext.finalStepClick(stageFinal, parentBody, countStepNumber);
+        ClickToNext.finalStepClick(
+            stageFinal,
+            parentBody, 
+            countStepNumber
+        );
 
         Back.backClick(
             backStep,
