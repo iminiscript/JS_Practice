@@ -25,9 +25,18 @@ class StepZero  {
             </div>
             <div class="c-steps hide js-count">
                 <ul class="c-stepsList">
-                    <li data-step="1" class="c-stepsItem">1</li>
-                    <li data-step="2" class="c-stepsItem">2</li>
-                    <li data-step="3" class="c-stepsItem">3</li>
+                    <li data-step="1" class="c-stepsItem">
+                    <span class="c-stepsRound">1</span>
+                    <span class="c-stepsTag"> ${this.data.data.step1Heading}</span>
+                    </li>
+                    <li data-step="2" class="c-stepsItem">
+                    <span class="c-stepsRound">2</span>
+                    <span class="c-stepsTag"> ${this.data.data.step2Heading}</span>
+                    </li>
+                    <li data-step="3" class="c-stepsItem">
+                    <span class="c-stepsRound">3</span>
+                    <span class="c-stepsTag"> ${this.data.data.step3Heading}</span>
+                    </li>
                 </ul>
             </div>
             <div class="c-stepZero c-stepOne--start" data-url="?step-0">
