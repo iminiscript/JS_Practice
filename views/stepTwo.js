@@ -1,11 +1,8 @@
 
 class StepTwo {
-  	
-	startStepTwo(data, element) {
-    	
-		data.forEach((item) => {
-
-        	const markup = `
+    startStepTwo(data, element) {
+        data.forEach((item) => {
+            const markup = `
 				<div class="c-stepInside" data-infos-child id="${item.Id}">
 					<div class="c-product">
 					<img src="${item.imageMobile.url}" />
@@ -33,8 +30,14 @@ class StepTwo {
 					<ul class="c-tileListItem">
 						<li><span>${item.productName}</span>   <span>$${item.price}</span> </li>
 						<li><span>Bonus Gifts</span>   <span>$${item.giftsValueUs}</span> </li>
-						<li><span>${item.shippingLabel}</span>  <span>$${item.shippingValueUs} </span></li>
-						<li><b><span>Subtotal</span></b>  <b><span>$${ item.price + item.shippingValueUs + item.giftsValueUs}</span></b> </li>
+						<li><span>${item.shippingLabel}</span>  <span>$${
+                item.shippingValueUs
+            } </span></li>
+						<li><b><span>Subtotal</span></b>  <b><span>$${
+                            item.price +
+                            item.shippingValueUs +
+                            item.giftsValueUs
+                        }</span></b> </li>
 					</ul>
 					<p class="c-tileDes"><span class="c-tileDesc__icon">
 					<svg width="17" height="17" fill="none">
@@ -44,9 +47,11 @@ class StepTwo {
 					</div>
 				</div>
 				`;
-        	
-			document.querySelector(element).insertAdjacentHTML('beforeend', markup);
-      	});
+
+            document
+                .querySelector(element)
+                .insertAdjacentHTML("beforeend", markup);
+        });
     }
 } 
 
