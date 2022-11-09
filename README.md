@@ -1,5 +1,5 @@
 
-# https://weatherminiscript.netlify.app/ 
+# https://agcomponet.netlify.app/ 
 
 
 
@@ -12,17 +12,15 @@
 
 **Client:** JavaScript, HTML and CSS
 
-**Server:** Netlify
-
-**External:** [Openweather API](https://openweathermap.org/api)  
+**Server:** Netlify 
 
 
 ## Features 
 
-### 1. Search any location to check the current weather.
-### 2. limited data is available in free version of API.
-### 3. VITE framework is used for bundles.
-### 4. MVC architecture is used but I need to learn that more.
+### 1. Dynamic functions.
+### 2. Fetch data from JSON file.
+### 3. All the JSON data is based on the current data strcture we have on live AG.
+### 4. HTML is genrated by JS with fetching data from JSON file using promises.
 
 
 
@@ -32,4 +30,4 @@
 
 ## Demo
 
-https://weatherminiscript.netlify.app/ 
+https://agcomponet.netlify.app/  
