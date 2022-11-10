@@ -1,5 +1,8 @@
 class Counter {
-	
+	/**
+	 * 
+	 * @param {HTML} stepCount - Current Active step count element. 
+	 */
 	stepCount(stepCount) {
     	
 		const currentStep = window.location.search;

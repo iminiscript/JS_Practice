@@ -1,6 +1,13 @@
 import Counter from "./stepCounter";
 class ClickToNext   {
-    
+    /**
+     * 
+     * @param {HTML} element - Next step Button
+     * @param {HTML} step - Step Count Wrapper
+     * @param {HTML} stepCount  - Current Active Step
+     * @param {HTML} backs - Back Button
+     * @param {HTML} parent - Parent element
+     */
     nextStepClick(element, step, stepCount, backs, parent) {
        
         element.addEventListener("click", function() {
@@ -26,7 +33,12 @@ class ClickToNext   {
             }
         })
     }
-
+    /**
+     * 
+     * @param {HTML} element - Next step Button
+     * @param {HTML} step - Step Count Wrapper
+     * @param {HTML} stepCount  - Current Active Step
+     */
     finalStepClick(element, parent, stepCount) {
         
         element.addEventListener("click", function() {

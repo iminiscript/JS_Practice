@@ -1,8 +1,12 @@
-
+/**
+ * data - Export JSON data after resolving promise.  
+ */
 export const state = {
     data : {}
 }
-
+/**
+ * Fetch data from the API. 
+ */
 export const getData = async function() {
     
     try {

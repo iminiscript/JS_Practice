@@ -1,5 +1,9 @@
 class Tabs {
-
+    /**
+     * 
+     * @param {HTML} tabTarget  - Target of the Click event
+     * @param {HTML} tabClick  - Action Performer of click event. 
+     */
     toggleTabs(tabTarget, tabClick) {
         
         const target = document.querySelector(tabClick.dataset.value) || 

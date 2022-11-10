@@ -1,8 +1,16 @@
 import Counter from "./stepCounter";
 
 class Back {
-    
-    backClick(element, step,stepCount, finalStep, btn, parent) {
+    /**
+     * 
+     * @param {HTML} Back - button element 
+     * @param {HTML} step - wraper of the buying process. 
+     * @param {HTML} stepCount - Current active step count. 
+     * @param {HTML Button - finalStep - Button for Final step. 
+     * @param {HTMl} btn - Checkout button element
+     * @param {HTML} parent - Element of a wrapper. 
+     */
+    backClick(element, step, stepCount, finalStep, btn, parent) {
         element.addEventListener("click", function() {
  
             const currentStep = window.location.search;

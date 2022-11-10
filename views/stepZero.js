@@ -1,6 +1,10 @@
 class StepZero  {
     parentElement = document.querySelector('#app');
 
+    /**
+     * Render the recived object to the DOM.
+     * @param {Object || Object[]} The data of First impression of the App. 
+     */
     startTheApp(data) {
         
         this.data = data;

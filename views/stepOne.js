@@ -1,5 +1,10 @@
 class StepOne {
-
+	/**
+	 * Render the recived object to the DOM.
+	 * This is Step one  of the APP
+	 * @param {Object || Object[]} The Product data to be rendered (e.g - Pouch || Travel Pack ) 
+	 * @param {HTML Target} element where we want to insert the data.
+	 */
     startStepOne(data, element) {
         
 		data.forEach((item) => {

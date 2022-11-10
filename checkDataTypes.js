@@ -1,4 +1,9 @@
 class DataTypes {
+  /**
+   * 
+   * @param {Objec} value - Returned value of product for Step 2.
+   * 
+   */
     constructor(value) {
         this.value = value;
     }

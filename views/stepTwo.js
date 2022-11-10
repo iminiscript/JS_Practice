@@ -1,5 +1,10 @@
 
 class StepTwo {
+	/**
+	 * 
+	 * @param {Object || Object[]} The data of what type of product pack we choose. 
+	 * @param {HTML Element} The element where we want to render this markup.  
+	 */
     startStepTwo(data, element) {
         data.forEach((item) => {
             const markup = `
