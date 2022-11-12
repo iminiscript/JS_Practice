@@ -1,5 +1,5 @@
-export function redirectToStep() {
+export function redirectToStep(to,  from) {
     if (window.location.search === '') {
-        window.history.pushState("", "", `/?step-0`);
+        window.history.pushState(to, "", from);
     }
 }

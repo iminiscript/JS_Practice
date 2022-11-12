@@ -7,12 +7,12 @@ export const state = {
 /**
  * Fetch data from the API. 
  */
-export const getData = async function() {
+export async  function getData() {
     
-    try {
-        const respons = await fetch('../product.json');
-        
-        if (!respons.ok) throw new Error();
+     try {
+        const respons = await fetch('../product1.json');
+        console.log(respons)
+        //if (!respons.ok) throw new Error();
         state.data = await respons.json();
 
     } catch (error) {

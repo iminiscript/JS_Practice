@@ -11,7 +11,7 @@ import Back from './backStep';
 import DataTypes from './checkDataTypes';
 import { defaultClick } from "./defaultSelected";
 
-const app = async function () {
+async  function app () {
     try {
         // 1) Recived the data 
         await model.getData();
@@ -22,6 +22,9 @@ const app = async function () {
         // 2) Insert the data for  first impression - Ref './views/stepZero'
         await StepZero.startTheApp(step_0);
 
+        //const stepZeroNew = new StepZero();
+        
+        //stepZeroNew.startTheApp(step_0)
         // 3) Declare the Variables for various events.
 
         const startBtn = document.querySelector(".js-startApp");
@@ -117,8 +120,8 @@ const app = async function () {
 };
 
 // Setup the initialization of the app.
-function init() {
-    redirectToStep();
+async function init() {
+    redirectToStep("", `?step-0`);
     app();
 }
 // Init the app.
