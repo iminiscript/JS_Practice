@@ -10,7 +10,7 @@ export const state = {
 export async  function getData() {
     
      try {
-        const respons = await fetch('../product1.json');
+        const respons = await fetch('../product.json');
         console.log(respons)
         //if (!respons.ok) throw new Error();
         state.data = await respons.json();
