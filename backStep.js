@@ -1,4 +1,4 @@
-import StepCounter from "./StepCounter";
+import StepCounter from "./stepCounter";
 
 class BackStep {
     /**
