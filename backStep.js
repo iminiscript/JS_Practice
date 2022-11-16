@@ -1,7 +1,7 @@
 import StepCounter from "./stepCounter";
 
 class BackStep {
-    /** 
+    /**
      *
      * @param {HTML} Back - button element
      * @param {HTML} step - wraper of the buying process.
@@ -48,7 +48,7 @@ class BackStep {
                     } else {
                         iterator.children[1].classList.remove("hide");
                         iterator.children[2].classList.remove("hide");
-                         iterator.children[3].classList.add("hide");
+                        iterator.children[3].classList.add("hide");
                     }
                 }
 
@@ -57,6 +57,5 @@ class BackStep {
             StepCounter.stepCount(stepCount);
         });
     }
-} ̰
- 
+}
 export default new BackStep();
