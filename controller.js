@@ -7,13 +7,13 @@ import StepOne from './views/stepOne';
 import ClickToNext from './clickToNext';
 import  Tabs  from './tabs';
 import StepTwo from './views/stepTwo';
-import Back from './backStep';
-import DataTypes from './checkDataTypes';
+import BackStep from "./backStep";
+import DataTypes from "./checkDataTypes";
 import { defaultClick } from "./defaultSelected";
 
-async  function app () {
+async function app() {
     try {
-        // 1) Recived the data 
+        // 1) Recived the data
         await model.getData();
 
         const step_0 = model.state;
@@ -23,7 +23,7 @@ async  function app () {
         await StepZero.startTheApp(step_0);
 
         //const stepZeroNew = new StepZero();
-        
+
         //stepZeroNew.startTheApp(step_0)
         // 3) Declare the Variables for various events.
 
@@ -46,14 +46,14 @@ async  function app () {
             backStep,
             parentBody
         );
-        
+
         // 5) - Insert data for step 1 - Ref - './views/stepOne'
         await StepOne.startStepOne(step_0.data.step0Items, "#step_1");
         const tabElement = document.querySelectorAll("[data-value]");
         const tabInfos = document.querySelectorAll("[data-info]");
-        
+
         // 6) - Choose the product typs by click the tabs. Ref - './tabs'
-        // @TODO - Find the other alternative for this function. 
+        // @TODO - Find the other alternative for this function.
 
         tabElement.forEach((tab) => {
             tab.addEventListener("click", function (e) {
@@ -73,10 +73,10 @@ async  function app () {
                     document.querySelectorAll("[data-value-child]");
                 const tabInfosChild =
                     document.querySelectorAll("[data-infos-child]");
-                
-                // 9) - Show the product details based on the selection 
-                // @TODO - Find the other version for this. 
-                
+
+                // 9) - Show the product details based on the selection
+                // @TODO - Find the other version for this.
+
                 tabElementChild.forEach((tab) => {
                     tab.addEventListener("click", function (e) {
                         Tabs.toggleTabs(tabInfosChild, tab);
@@ -93,15 +93,11 @@ async  function app () {
             backStep
         );
 
-        // 11) - Show the product details data for checkout. 
-        ClickToNext.finalStepClick(
-            stageFinal,
-            parentBody, 
-            countStepNumber
-        );
-        
+        // 11) - Show the product details data for checkout.
+        ClickToNext.finalStepClick(stageFinal, parentBody, countStepNumber);
+
         // 12) - Go to previous step at any point.  Ref - './backStep'
-        Back.backClick(
+        BackStep.backClick(
             backStep,
             countStep,
             countStepNumber,
@@ -109,11 +105,10 @@ async  function app () {
             stageFinal,
             parentBody
         );
-        
-        // 13) - Select the first default verison of Product. 
-        // @TODO - There could be better version for this function. 
+
+        // 13) - Select the first default verison of Product.
+        // @TODO - There could be better version for this function.
         defaultClick(".c-tile");
-     
     } catch (error) {
         console.log(error);
     }
