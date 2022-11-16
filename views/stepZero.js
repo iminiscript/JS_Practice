@@ -1,19 +1,18 @@
-class StepZero  {
-    parentElement = document.querySelector('#app');
+class StepZero {
+    parentElement = document.querySelector("#app");
 
     /**
      * Render the recived object to the DOM.
-     * @param {Object || Object[]} The data of First impression of the App. 
+     * @param {Object || Object[]} The data of First impression of the App.
      */
     startTheApp(data) {
-        
         this.data = data;
-        
-        const html = this.genrateIntialMarkup();   
-        
-        this.parentElement.insertAdjacentHTML('afterbegin', html);
+
+        const html = this.genrateIntialMarkup();
+
+        this.parentElement.insertAdjacentHTML("afterbegin", html);
     }
-    
+
     genrateIntialMarkup() {
         return `
             <div class="c-header">
@@ -60,7 +59,7 @@ class StepZero  {
                 <div class="c-checkout js-start js-nextTwo c-btn">
                     Next
                 </div>
-            </div>`
+            </div>`;
     }
 }
 

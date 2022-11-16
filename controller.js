@@ -1,12 +1,12 @@
-import './styles/index.scss'
-import * as model from './model.js'
+import "./styles/index.scss";
+import * as model from "./model.js";
 
-import { redirectToStep } from './redirect';
-import StepZero from './views/stepZero';
-import StepOne from './views/stepOne';
-import ClickToNext from './clickToNext';
-import  Tabs  from './tabs';
-import StepTwo from './views/stepTwo';
+import { redirectToStep } from "./redirect";
+import StepZero from "./views/stepZero";
+import StepOne from "./views/stepOne";
+import ClickToNext from "./clickToNext";
+import Tabs from "./tabs";
+import StepTwo from "./views/stepTwo";
 import BackStep from "./backStep";
 import DataTypes from "./checkDataTypes";
 import { defaultClick } from "./defaultSelected";
@@ -112,7 +112,7 @@ async function app() {
     } catch (error) {
         console.log(error);
     }
-};
+}
 
 // Setup the initialization of the app.
 async function init() {

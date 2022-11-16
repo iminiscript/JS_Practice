@@ -1,15 +1,13 @@
 class StepOne {
-	/**
-	 * Render the recived object to the DOM.
-	 * This is Step one  of the APP
-	 * @param {Object || Object[]} The Product data to be rendered (e.g - Pouch || Travel Pack ) 
-	 * @param {HTML Target} element where we want to insert the data.
-	 */
+    /**
+     * Render the recived object to the DOM.
+     * This is Step one  of the APP
+     * @param {Object || Object[]} The Product data to be rendered (e.g - Pouch || Travel Pack )
+     * @param {HTML Target} element where we want to insert the data.
+     */
     startStepOne(data, element) {
-        
-		data.forEach((item) => {
-           
-			const html = `
+        data.forEach((item) => {
+            const html = `
 			<div class="c-stepInside" data-info id="${item.Id}">
 				<div class="c-product">
 					<img src="${item.imageMobile.url}" />
@@ -29,9 +27,11 @@ class StepOne {
 				</div>
 			</div>
 			`;
-			document.querySelector(element).insertAdjacentHTML("beforeend", html);
-		});
-	}
+            document
+                .querySelector(element)
+                .insertAdjacentHTML("beforeend", html);
+        });
+    }
 }
 
 export default new StepOne();
