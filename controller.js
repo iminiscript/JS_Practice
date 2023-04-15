@@ -61,6 +61,7 @@ async function app() {
 
                 // 7) - Select the product types for step-2 Ref - './checkDataTypes'
                 let selectedDataType = DataTypes.checkData(step_0);
+                
 
                 document.querySelector("#step_2").innerHTML = "";
 
